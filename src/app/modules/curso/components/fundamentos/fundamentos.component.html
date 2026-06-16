@@ -1,0 +1,21 @@
+<h1>{{ titulo }}</h1>
+<hr />
+<div>INTERPOLACION: Hola {{ nombreInterpolacion }}</div>
+<div>
+  VARIABLES DE PLANTILLA:
+  <input type="text" #nombreInput />
+  <button (click)="saludar(nombreInput.value)">Saludar</button>
+</div>
+<div>
+  PROPERTY BINDING(One Way Data Binding) | TS -> HTML:
+  <input type="text" [disabled]="banderaPropertyBinding" />
+</div>
+<div>
+  EVENT BINDING | HTML -> TS:
+  <button (click)="eventBinding($event)">Registrar</button>
+  {{ textoEventBinding }}
+</div>
+<div>
+  TWO WAY DATA BINDING: {{ twoWayDataBindingBidireccional }}:
+  <input type="text" [(ngModel)]="twoWayDataBindingBidireccional" />
+</div>

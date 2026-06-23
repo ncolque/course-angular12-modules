@@ -19,3 +19,27 @@
   TWO WAY DATA BINDING: {{ twoWayDataBindingBidireccional }}:
   <input type="text" [(ngModel)]="twoWayDataBindingBidireccional" />
 </div>
+<div>
+  <p>
+    DIRECTIVAS ESTRUCTURALES: *ngIf
+    <button (click)="cambiarBandera()">Cambiar bandera</button>
+  </p>
+  <p *ngIf="banderaIf; else templateNotFound">-> {{ textoForTrue }}</p>
+  <ng-template #templateNotFound>
+    <p>-> Aqui ingresa por False o si no se cumplio el IF</p>
+  </ng-template>
+</div>
+<div>
+  <p>DIRECTIVAS ESTRUCTURALES: *ngFor</p>
+  <ul *ngFor="let lenguaje of lenguajesProgramacionFor">
+    <li>{{ lenguaje }}</li>
+  </ul>
+</div>
+<div>
+  <p>DIRECTIVAS ESTRUCTURALES: *ngSwitch</p>
+  <div [ngSwitch]="binarioSwitch">
+    <div *ngSwitchCase="0">Valor de 0</div>
+    <div *ngSwitchCase="1">Valor de 1</div>
+    <div *ngSwitchDefault>Otro</div>
+  </div>
+</div>

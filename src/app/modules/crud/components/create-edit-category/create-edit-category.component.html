@@ -1,0 +1,15 @@
+<form [formGroup]="formGroupCategory" (ngSubmit)="createEditCategory()">
+  <input type="text" formControlName="name" placeholder="Nombre" />
+  <div
+    *ngIf="
+      formGroupCategory.get('name')?.invalid &&
+      formGroupCategory.get('name')?.touched
+    "
+  >
+    El nombre es obligatorio
+  </div>
+  <input type="text" formControlName="slug" placeholder="Slug" />
+  <br />
+  <button type="submit" [disabled]="formGroupCategory.invalid">Guardar</button>
+  <button type="button" [routerLink]="['/']">Cancelar</button>
+</form>

@@ -12,6 +12,11 @@ export class FundamentosComponent implements OnInit {
   textoEventBinding = 'No registrado';
   twoWayDataBindingBidireccional = 'Prueba';
 
+  banderaIf = true;
+  textoForTrue = 'Ingresa por True';
+  lenguajesProgramacionFor = ['JavaScript', 'TypeScript', 'C#', 'Java'];
+  binarioSwitch = 0;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -22,5 +27,9 @@ export class FundamentosComponent implements OnInit {
 
   eventBinding(event: Event) {
     this.textoEventBinding = 'Registrado';
+  }
+
+  cambiarBandera() {
+    this.banderaIf = !this.banderaIf;
   }
 }

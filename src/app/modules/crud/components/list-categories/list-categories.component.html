@@ -1,0 +1,12 @@
+<div>
+  <button [routerLink]="['/crud/create-category']">Crear Categoria</button>
+  <a routerLink="/crud/create-category">Crear categoría</a>
+</div>
+<hr />
+<div>
+  <p *ngFor="let category of categories; let i = index">
+    {{ i + 1 }}: {{ category.name }} - {{ category.slug }}
+    <button [routerLink]="['/crud/edit-category', category.id]">Editar</button>
+    <button (click)="deleteCategory(category.id!)">Eliminar</button>
+  </p>
+</div>
